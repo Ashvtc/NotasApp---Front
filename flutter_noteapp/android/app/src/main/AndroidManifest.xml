@@ -3,7 +3,7 @@
    <application
         android:label="flutter_noteapp"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/notasappcolor">
         <activity
             android:name=".MainActivity"
             android:exported="true"

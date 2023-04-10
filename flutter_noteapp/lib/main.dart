@@ -47,9 +47,9 @@ class MyApp extends StatelessWidget {
 
           //'Usuario'/'Contraseña'
           bodyMedium: TextStyle(
-              fontSize: 16.0,
+              fontSize: 14.0,
               //fontFamily:,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.normal,
               color: Color(0XFF1F1F1F),
           ),
         ),

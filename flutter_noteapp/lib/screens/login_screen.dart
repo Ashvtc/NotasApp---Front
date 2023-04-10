@@ -12,6 +12,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0XFFFAFAFA),
+
+      //AppBar (Icon arrow)
       appBar: AppBar(
         backgroundColor: const Color(0XFFFAFAFA),
         elevation: 0,
@@ -23,6 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
           icon: Icon(Icons.arrow_back_ios, color: Color(0XFF000000)),
         ),
       ),
+      
       body: SafeArea(
         child: Padding(padding:const EdgeInsets.only(bottom: 20.0),
           child: Column(

@@ -16,8 +16,8 @@ class userNotes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         child: SizedBox(
-    width: 300,
-    height: 100,
+    width: 200,
+    height: 200,
     child: Center(child: Text(noteText)),
         ),
         color: color,

@@ -54,29 +54,51 @@ class DashboardScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            Column(children: const [ 
-                userNotes(noteText:'sjsjsjsj',date:'date', color:AppTheme.note_1), 
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2), 
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2), 
-                userNotes(noteText:'sfg'     ,date:'date', color:AppTheme.note_3), 
-                userNotes(noteText:'kkkk'    ,date:'date', color:AppTheme.note_3), 
-             ], 
+              GridView.count(
+              primary: false,
+              padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: <Widget>[
+                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_1),
+                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2),
+                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2),
+                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_3),
+                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_3),
+              ],
             ),
-            Column(children: const [ 
-                userNotes(noteText:'sjsjsjsj',date:'date', color:AppTheme.note_1),  
-             ], 
+              GridView.count(
+              primary: false,
+              padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: <Widget>[
+                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_1),
+              ],
             ),
-             Column(children: const [ 
-                userNotes(noteText:'sjsjsjsj',date:'date', color:AppTheme.note_2), 
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2), 
-                 
-             ], 
+               GridView.count(
+              primary: false,
+              padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: <Widget>[
+                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2),
+                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2),
+              ],
             ),
-             Column(children: const [ 
-                userNotes(noteText:'sjsjsjsj',date:'date', color:AppTheme.note_3), 
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_3), 
-               
-             ], 
+             GridView.count(
+              primary: false,
+              padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: <Widget>[
+                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_3),
+                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_3),
+              ],
             ),
           ],
         ),

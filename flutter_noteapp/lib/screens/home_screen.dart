@@ -19,14 +19,14 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget> [
 
               //Imagen principal
-              Image.asset("assets/noteappd.png",
+              Image.asset("assets/NoteAppD.png",
                 width: 220,
                 fit: BoxFit.cover,
               ),
               const Spacer(),
 
               //Imagen Nombre App
-              Image.asset("assets/notasappcolor.png",
+              Image.asset("assets/NotasAppColor.png",
                 width: 150,
                 fit: BoxFit.cover,
               ),

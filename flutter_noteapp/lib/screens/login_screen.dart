@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_noteapp/screens/screens.dart';
+import 'package:flutter_noteapp/themes/app_theme.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -11,7 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0XFFFAFAFA),
+      backgroundColor: AppTheme.bgGray,
 
       //AppBar (Icon arrow)
       appBar: AppBar(
@@ -32,14 +34,14 @@ class _LoginScreenState extends State<LoginScreen> {
               children: <Widget> [
           
                 //Imagen principal
-                Image.asset("assets/noteappd.png",
+                Image.asset("assets/NoteAppD.png",
                   width: 220,
                   fit: BoxFit.cover,
                 ),
                 const Spacer(),
           
                 //Imagen Nombre App
-                Image.asset("assets/notasappcolor.png",
+                Image.asset("assets/NotasAppColor.png",
                   width: 130,
                   fit: BoxFit.cover,
                 ),
@@ -111,7 +113,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
 
                         //Navigator
-                        onPressed: () {},
+                        onPressed: () {
+                          final route = MaterialPageRoute(builder: (context) => const DashboardScreen());
+                          Navigator.pushReplacement(context, route);
+                        },
                           //Navigator.push(context,MaterialPageRoute(builder: (context) => const DashboardScreen()));},
 
                         child: Padding(padding: EdgeInsets.all(12.0),

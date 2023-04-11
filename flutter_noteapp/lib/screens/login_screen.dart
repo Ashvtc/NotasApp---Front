@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_noteapp/screens/screens.dart';
+import 'package:flutter_noteapp/themes/app_theme.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0XFFFAFAFA),
+      backgroundColor: AppTheme.bgGray,
 
       //AppBar (Icon arrow)
       appBar: AppBar(

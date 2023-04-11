@@ -71,9 +71,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),),
                       ),
                     ],
-                  ),), 
+                  ),), const Spacer(),
 
-                const Spacer(),
                 //Input 'Contraseña'
                 Padding(padding: EdgeInsets.only(top:10, left:20.0, right: 20.0, bottom: 10),
                   child: Column(
@@ -103,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),), 
 
                 //'iniciar sesion'
-                Padding(padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20, bottom: 15),
+                Padding(padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20, bottom: 30),
                 child: Row(
                   children: [ Expanded(
                       child: MaterialButton(
@@ -133,13 +132,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ), const Spacer(),
 
-                //'¿Olvidaste tu contraseña?'
-                GestureDetector(
-                  onTap: () {}, //Navigator
-                  child: Text("¿Olvidaste tu contraseña?", 
-                  style: Theme.of(context).textTheme.bodyMedium,),
-                ),
-                const Spacer(), const Spacer(),
               ],
             ),
           ),

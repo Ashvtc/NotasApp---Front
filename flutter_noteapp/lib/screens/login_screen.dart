@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_noteapp/screens/screens.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -111,7 +112,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
 
                         //Navigator
-                        onPressed: () {},
+                        onPressed: () {
+                          final route = MaterialPageRoute(builder: (context) => const DashboardScreen());
+                          Navigator.pushReplacement(context, route);
+                        },
                           //Navigator.push(context,MaterialPageRoute(builder: (context) => const DashboardScreen()));},
 
                         child: Padding(padding: EdgeInsets.all(12.0),

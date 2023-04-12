@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_noteapp/screens/login_screen.dart';
 
+import 'new_account_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -83,7 +85,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         
                         //Navigator
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, 
+                            MaterialPageRoute(
+                              builder: (context) => const NewAccountScreen()));},
                         
                         child: Padding(
                           padding: EdgeInsets.all(12.0),

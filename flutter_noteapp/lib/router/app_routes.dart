@@ -5,9 +5,11 @@ class AppRoutes {
   static const initialRoute = 'home';
 
   static Map<String, Widget Function(BuildContext)> routes = {
-        'home'     : (BuildContext context) => const HomeScreen(),
-        'login'    : (BuildContext context) => const LoginScreen(),
-        'dashboard': (BuildContext context) => const DashboardScreen(),
+        'home'       : (BuildContext context) => const HomeScreen(),
+        'login'      : (BuildContext context) => const LoginScreen(),
+        'dashboard'  : (BuildContext context) => const DashboardScreen(),
+        'view-note'  : (BuildContext context) => const DashboardScreen(),
+        'create-note': (BuildContext context) => const DashboardScreen(),
       }; 
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {

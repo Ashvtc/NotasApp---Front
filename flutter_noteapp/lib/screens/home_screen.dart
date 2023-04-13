@@ -16,13 +16,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: const Color(0XFFFAFAFA),
       body: SafeArea(
-        child: Padding(padding:const EdgeInsets.only(top: 110.0),
+        child: Padding(padding:const EdgeInsets.only(top: 100.0),
           child: Column(
             children: <Widget> [
 
               //Imagen principal
               Image.asset("assets/NoteAppD.png",
-                width: 220,
+                width: 260,
                 fit: BoxFit.cover,
               ),
               const Spacer(),
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               //'iniciar sesion'
               Padding(
-                padding: const EdgeInsets.only(top: 45.0, left: 20, right: 20),
+                padding: const EdgeInsets.only(top: 27.0, left: 20, right: 20, bottom: 15.0),
                 child: Row(
                   children: [ Expanded(
                       child: MaterialButton(

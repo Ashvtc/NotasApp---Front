@@ -29,24 +29,24 @@ class _NewAccountScreenState extends State<NewAccountScreen> {
       ),
       
       body: SafeArea(
-        child: Padding(padding:const EdgeInsets.only(bottom: 5.0),
+        child: Padding(padding:const EdgeInsets.only(top: 25, bottom: 20.0),
           child: Column(
               children: <Widget> [
           
                 //Imagen principal
                 Image.asset("assets/NoteAppD.png",
-                  width: 195,
+                  width: 235,
                   fit: BoxFit.cover,
-                ),
+                ),const Spacer(),
           
                 //Imagen Nombre App
                 Image.asset("assets/NotasAppColor.png",
-                  width: 130,
+                  width: 140,
                   fit: BoxFit.cover,
                 ),
                 
                 //Input 'Usuario o correo'
-                Padding(padding: EdgeInsets.only(top:30, left:20.0, right: 20.0, bottom: 10),
+                Padding(padding: EdgeInsets.only(top:20, left:20.0, right: 20.0, bottom: 10),
                   child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[ 
@@ -126,7 +126,7 @@ class _NewAccountScreenState extends State<NewAccountScreen> {
                         ),
                       ),
                     ],
-                  ),), 
+                  ),), const Spacer(),
 
                 //'crear cuenta'
                 Padding(padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20, bottom: 30),

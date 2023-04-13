@@ -29,25 +29,25 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       
       body: SafeArea(
-        child: Padding(padding:const EdgeInsets.only(bottom: 20.0),
+        child: Padding(padding:const EdgeInsets.only(top: 25, bottom: 20.0),
           child: Column(
               children: <Widget> [
           
                 //Imagen principal
                 Image.asset("assets/NoteAppD.png",
-                  width: 220,
+                  width: 235,
                   fit: BoxFit.cover,
-                ),
-                const Spacer(),
+                ),const Spacer(),
+              
           
                 //Imagen Nombre App
                 Image.asset("assets/NotasAppColor.png",
-                  width: 130,
+                  width: 140,
                   fit: BoxFit.cover,
                 ),
                 
                 //Input 'Usuario o correo'
-                Padding(padding: EdgeInsets.only(top:30, left:20.0, right: 20.0, bottom: 10),
+                Padding(padding: EdgeInsets.only(top:40, left:20.0, right: 20.0, bottom: 35),
                   child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[ 
@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),),
                       ),
                     ],
-                  ),), const Spacer(),
+                  ),), 
 
                 //Input 'Contraseña'
                 Padding(padding: EdgeInsets.only(top:10, left:20.0, right: 20.0, bottom: 10),
@@ -99,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ],
-                  ),), 
+                  ),), const Spacer(),
 
                 //'iniciar sesion'
                 Padding(padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20, bottom: 30),

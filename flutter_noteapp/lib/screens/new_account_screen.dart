@@ -2,20 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_noteapp/screens/screens.dart';
 import 'package:flutter_noteapp/themes/app_theme.dart';
 
-class NewAccountScreen extends StatefulWidget {
+class NewAccountScreen extends StatelessWidget {
   const NewAccountScreen({Key? key}) : super(key: key);
 
-  @override
-  _NewAccountScreenState createState() => _NewAccountScreenState();
-}
-
-class _NewAccountScreenState extends State<NewAccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.bgGray,
 
-      //AppBar (Icon arrow)
+//----------AppBar (Icon arrow)----------
       appBar: AppBar(
         backgroundColor: const Color(0XFFFAFAFA),
         elevation: 0,
@@ -33,19 +28,19 @@ class _NewAccountScreenState extends State<NewAccountScreen> {
           child: Column(
               children: <Widget> [
           
-                //Imagen principal
+//----------Imagen principal----------
                 Image.asset("assets/NoteAppD.png",
                   width: 235,
                   fit: BoxFit.cover,
                 ),const Spacer(),
           
-                //Imagen Nombre App
+//----------Imagen Nombre App----------
                 Image.asset("assets/NotasAppColor.png",
                   width: 140,
                   fit: BoxFit.cover,
                 ),
                 
-                //Input 'Usuario o correo'
+//----------Input 'Usuario o correo'----------
                 Padding(padding: EdgeInsets.only(top:20, left:20.0, right: 20.0, bottom: 10),
                   child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +67,7 @@ class _NewAccountScreenState extends State<NewAccountScreen> {
                     ],
                   ),),
 
-                //Input 'Contraseña'
+//----------Input 'Contraseña'----------
                 Padding(padding: EdgeInsets.only(top:10, left:20.0, right: 20.0, bottom: 10),
                   child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,7 +95,7 @@ class _NewAccountScreenState extends State<NewAccountScreen> {
                     ],
                   ),), 
 
-                //Input 'Confirmar Contraseña'
+//----------Input 'Confirmar Contraseña'----------
                 Padding(padding: EdgeInsets.only(top:10, left:20.0, right: 20.0, bottom: 10),
                   child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,7 +123,7 @@ class _NewAccountScreenState extends State<NewAccountScreen> {
                     ],
                   ),), const Spacer(),
 
-                //'crear cuenta'
+//----------Button 'Crear cuenta'----------
                 Padding(padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20, bottom: 30),
                 child: Row(
                   children: [ Expanded(
@@ -138,12 +133,52 @@ class _NewAccountScreenState extends State<NewAccountScreen> {
                           borderRadius: BorderRadius.circular(5),
                         ),
 
-                        //Navigator
-                        onPressed: () {
-                          final route = MaterialPageRoute(builder: (context) => const DashboardScreen());
-                          Navigator.pushReplacement(context, route);
-                        },
-                          //Navigator.push(context,MaterialPageRoute(builder: (context) => const DashboardScreen()));},
+
+                      //Navigator
+                        onPressed: () => showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            
+                            //Confirmation Message
+                              return AlertDialog(
+                                backgroundColor: AppTheme.primary,
+                                
+                                //Title & Content
+                                  title: Text("¡Cuenta creada!", style: AppTheme.lightTheme.textTheme.bodyLarge, textAlign: TextAlign.center),
+                                  content: SizedBox(height: 80,
+                                    child: Column(
+                                      children: <Widget>[
+                                        Text("¡Muchas gracias por unirte a nosotros!", style: AppTheme.lightTheme.textTheme.bodyMedium),
+                                        Text("Tu cuenta ha sido creada exitosamente", style: AppTheme.lightTheme.textTheme.bodyMedium), const Spacer(),
+                                        
+                                        //Options 'Ingresar' & 'Salir'
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                          GestureDetector(
+                                            onTap: () {
+                                              final route = MaterialPageRoute(builder: (context) => const DashboardScreen());
+                                              Navigator.pushReplacement(context, route);
+                                            },
+                                            child: Text("Ingresar", 
+                                            style: AppTheme.lightTheme.textTheme.displaySmall),
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              final route = MaterialPageRoute(builder: (context) => const HomeScreen());
+                                              Navigator.pushReplacement(context, route);
+                                            },
+                                            child: Text("Salir", 
+                                            style: AppTheme.lightTheme.textTheme.displaySmall),
+                                          ),
+                                        ],)
+                                      ],
+                                    ),
+                                  ),
+                              );
+                          }
+                        ),
+
 
                         child: Padding(padding: EdgeInsets.all(12.0),
                           child: Column(children: <Widget>[ 
@@ -157,12 +192,11 @@ class _NewAccountScreenState extends State<NewAccountScreen> {
                     ),
                   ],
                 ),
-              ),
-
-              ],
+              ),],
             ),
           ),
         ),
    );
   }
+
 }

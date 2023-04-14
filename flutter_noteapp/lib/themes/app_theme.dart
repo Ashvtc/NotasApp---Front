@@ -43,11 +43,25 @@ class AppTheme{
               color: Color(0XFF1F1F1F),
           ),
 
+          bodyLarge: TextStyle(
+              fontSize: 24.0,
+              //fontFamily:,
+              fontWeight: FontWeight.bold,
+              color: Color(0XFF1F1F1F),
+          ),
+
           //'Usuario'/'Contraseña'
           bodyMedium: TextStyle(
               fontSize: 14.0,
               //fontFamily:,
               fontWeight: FontWeight.normal,
+              color: Color(0XFF1F1F1F),
+          ),
+
+          bodySmall: TextStyle(
+              fontSize: 14.0,
+              //fontFamily:,
+              fontWeight: FontWeight.bold,
               color: Color(0XFF1F1F1F),
           ),
         ),

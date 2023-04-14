@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_noteapp/screens/screens.dart';
 import 'package:flutter_noteapp/themes/app_theme.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
-  @override
-  _LoginScreenState createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),), const Spacer(),
 
-                //'iniciar sesion'
+                //Button 'iniciar sesion'
                 Padding(padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20, bottom: 30),
                 child: Row(
                   children: [ Expanded(

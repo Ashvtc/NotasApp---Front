@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
 
       //AppBar (Icon arrow)
       appBar: AppBar(
-        backgroundColor: const Color(0XFFFAFAFA),
+        backgroundColor: AppTheme.bgGray,
         elevation: 0,
         automaticallyImplyLeading: false,
         leading: IconButton(
@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
       ),
       
       body: SafeArea(
-        child: Padding(padding:const EdgeInsets.only(top: 25, bottom: 20.0),
+        child: Padding(padding:const EdgeInsets.only(top: 10, bottom: 20.0),
           child: Column(
               children: <Widget> [
           

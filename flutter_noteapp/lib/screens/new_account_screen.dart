@@ -24,7 +24,7 @@ class NewAccountScreen extends StatelessWidget {
       ),
       
       body: SafeArea(
-        child: Padding(padding:const EdgeInsets.only(top: 25, bottom: 20.0),
+        child: Padding(padding:const EdgeInsets.only(top: 10, bottom: 20.0),
           child: Column(
               children: <Widget> [
           
@@ -96,7 +96,7 @@ class NewAccountScreen extends StatelessWidget {
                   ),), 
 
 //----------Input 'Confirmar Contraseña'----------
-                Padding(padding: EdgeInsets.only(top:10, left:20.0, right: 20.0, bottom: 10),
+                Padding(padding: EdgeInsets.only(top:10, left:20.0, right: 20.0, bottom: 5),
                   child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[ 
@@ -124,7 +124,7 @@ class NewAccountScreen extends StatelessWidget {
                   ),), const Spacer(),
 
 //----------Button 'Crear cuenta'----------
-                Padding(padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20, bottom: 30),
+                Padding(padding: const EdgeInsets.only(top: 25.0, left: 20, right: 20, bottom: 30),
                 child: Row(
                   children: [ Expanded(
                       child: MaterialButton(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_noteapp/screens/login_screen.dart';
+import 'package:flutter_noteapp/themes/app_theme.dart';
 
 import 'new_account_screen.dart';
 
@@ -9,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0XFFFAFAFA),
+      backgroundColor: AppTheme.bgGray,
       body: SafeArea(
         child: Padding(padding:const EdgeInsets.only(top: 100.0),
           child: Column(

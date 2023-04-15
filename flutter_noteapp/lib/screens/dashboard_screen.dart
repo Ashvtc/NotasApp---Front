@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_noteapp/screens/screens.dart';
 
+import '../sidebar_menu.dart';
 import '../themes/app_theme.dart';
 import '../widgets/widgets.dart';
 
@@ -15,18 +16,13 @@ class DashboardScreen extends StatelessWidget {
       initialIndex: 0,
       length: 4,
       child: Scaffold(
+        drawer: const SideBar(),
         appBar: AppBar(
           backgroundColor: AppTheme.bgGray,
           elevation: 0,
           title: Image.asset("assets/NotasAppColor.png",width: 100,),
           centerTitle: true,
-          leading: IconButton(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Menu Proximamente')));
-            },
-            icon: const Icon(Icons.menu, color: AppTheme.text_dark ),
-          ),
+          iconTheme: const IconThemeData(color: AppTheme.text_dark),
           actions: [
             IconButton(
               icon: const Icon(Icons.search, color: AppTheme.text_dark),

@@ -8,18 +8,6 @@ void main() {
 }
 
 
-// class AppState extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context){
-//     return MultiProvider(
-//       provider: [
-//         ChangeNotifierProvider(create: (_) => UsersService())
-//       ],
-//       child: MyApp(),
-//     );
-//   }
-// }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

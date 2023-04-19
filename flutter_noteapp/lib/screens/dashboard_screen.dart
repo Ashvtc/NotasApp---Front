@@ -1,13 +1,42 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_noteapp/models/user.dart';
 import 'package:flutter_noteapp/screens/screens.dart';
 
 import '../sidebar_menu.dart';
 import '../themes/app_theme.dart';
 import '../widgets/widgets.dart';
+import 'package:http/http.dart' as http;
 
 
 class DashboardScreen extends StatelessWidget {
-   
+
+final urlBase = '';
+
+Future<User> getUser() async{
+  final response = await http.get('' as Uri);
+
+  User user;
+
+  if(response.statusCode == 200){    
+    print(response);
+    final user = jsonDecode(utf8.decode(response.bodyBytes));
+    return user;
+  } else{
+    print("Error");
+    throw Exception("Fallo la conexion");
+
+  } 
+}
+
+  @override
+  void initState(){
+    Future<User> user = getUser();
+    print(user);
+  }
+
+
   const DashboardScreen({Key? key}) : super(key: key);
   
   @override

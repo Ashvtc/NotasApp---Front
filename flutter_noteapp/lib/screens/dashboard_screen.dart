@@ -9,39 +9,43 @@ import '../themes/app_theme.dart';
 import '../widgets/widgets.dart';
 import 'package:http/http.dart' as http;
 
-
-class DashboardScreen extends StatelessWidget {
-
-final urlBase = '';
-
-Future<User> getUser() async{
-  final response = await http.get('' as Uri);
-
-  User user;
-
-  if(response.statusCode == 200){    
-    print(response);
-    final user = jsonDecode(utf8.decode(response.bodyBytes));
-    return user;
-  } else{
-    print("Error");
-    throw Exception("Fallo la conexion");
-
-  } 
+class DashboardScreen extends StatefulWidget {
+  const DashboardScreen({Key? key}) : super(key: key);
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
 }
 
-  @override
-  void initState(){
-    Future<User> user = getUser();
-    print(user);
+class _DashboardScreenState extends State<DashboardScreen> {
+  final urlBase = '/users/2';
+
+  Future<User> getUser() async {
+    var url = Uri.http('localhost:8888', '/users/2');
+
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        print(response.body);
+        final user = jsonDecode(response.body);
+        return user;
+      } else {
+        print("Error");
+        throw Exception("Fallo la conexion");
+      }
+    } catch (e) {
+      print(e);
+      throw Exception("Fallo la conexion");
+    }
   }
 
+  @override
+  void initState() {
+    Future<User> user = getUser();
+    super.initState();
+  }
 
-  const DashboardScreen({Key? key}) : super(key: key);
-  
   @override
   Widget build(BuildContext context) {
-     return DefaultTabController(
+    return DefaultTabController(
       initialIndex: 0,
       length: 4,
       child: Scaffold(
@@ -49,7 +53,10 @@ Future<User> getUser() async{
         appBar: AppBar(
           backgroundColor: AppTheme.bgGray,
           elevation: 0,
-          title: Image.asset("assets/NotasAppColor.png",width: 100,),
+          title: Image.asset(
+            "assets/NotasAppColor.png",
+            width: 100,
+          ),
           centerTitle: true,
           iconTheme: const IconThemeData(color: AppTheme.text_dark),
           actions: [
@@ -60,7 +67,7 @@ Future<User> getUser() async{
                     const SnackBar(content: Text('Buscar Proximamente')));
               },
             ),
-            ],
+          ],
           bottom: const TabBar(
             indicatorColor: AppTheme.primary,
             tabs: <Widget>[
@@ -81,68 +88,81 @@ Future<User> getUser() async{
         ),
         body: TabBarView(
           children: <Widget>[
-              GridView.count(
-              primary: false,
-              padding: const EdgeInsets.all(20),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              crossAxisCount: 2,
-              children: <Widget>[ 
-                userNotes(noteText:'sdgssssssss'     ,date:'date', color:AppTheme.note_1),
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2),
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2),
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_3),
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_3),
-              ],
-            ),
-              GridView.count(
+            GridView.count(
               primary: false,
               padding: const EdgeInsets.all(20),
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               crossAxisCount: 2,
               children: <Widget>[
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_1),
+                userNotes(
+                    noteText: 'sdgssssssss',
+                    date: 'date',
+                    color: AppTheme.note_1),
+                userNotes(
+                    noteText: 'sdg', date: 'date', color: AppTheme.note_2),
+                userNotes(
+                    noteText: 'sdg', date: 'date', color: AppTheme.note_2),
+                userNotes(
+                    noteText: 'sdg', date: 'date', color: AppTheme.note_3),
+                userNotes(
+                    noteText: 'sdg', date: 'date', color: AppTheme.note_3),
               ],
             ),
-               GridView.count(
+            GridView.count(
               primary: false,
               padding: const EdgeInsets.all(20),
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               crossAxisCount: 2,
               children: <Widget>[
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2),
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_2),
+                userNotes(
+                    noteText: 'sdg', date: 'date', color: AppTheme.note_1),
               ],
             ),
-             GridView.count(
+            GridView.count(
               primary: false,
               padding: const EdgeInsets.all(20),
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               crossAxisCount: 2,
               children: <Widget>[
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_3),
-                userNotes(noteText:'sdg'     ,date:'date', color:AppTheme.note_3),
+                userNotes(
+                    noteText: 'sdg', date: 'date', color: AppTheme.note_2),
+                userNotes(
+                    noteText: 'sdg', date: 'date', color: AppTheme.note_2),
+              ],
+            ),
+            GridView.count(
+              primary: false,
+              padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: <Widget>[
+                userNotes(
+                    noteText: 'sdg', date: 'date', color: AppTheme.note_3),
+                userNotes(
+                    noteText: 'sdg', date: 'date', color: AppTheme.note_3),
               ],
             ),
           ],
         ),
-        
-       floatingActionButton: FloatingActionButton(
-         onPressed: () {
-           final route = MaterialPageRoute(builder: (context) => const CreateNoteScreen());
-           Navigator.pushReplacement(context, route);
-         },
-         backgroundColor: AppTheme.primary,
-         child: const Icon(Icons.add, color: AppTheme.text_dark,),
-         elevation: 2,  
-       ) ,
-       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            final route = MaterialPageRoute(
+                builder: (context) => const CreateNoteScreen());
+            Navigator.pushReplacement(context, route);
+          },
+          backgroundColor: AppTheme.primary,
+          child: const Icon(
+            Icons.add,
+            color: AppTheme.text_dark,
+          ),
+          elevation: 2,
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
-    
   }
 }
-

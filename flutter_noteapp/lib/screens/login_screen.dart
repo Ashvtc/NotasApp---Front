@@ -1,9 +1,38 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_noteapp/screens/screens.dart';
 import 'package:flutter_noteapp/themes/app_theme.dart';
+import '../models/user.dart';
+import 'package:http/http.dart' as http;
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
+
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+
+   Future<User> getUser() async {
+    var url = Uri.http('localhost:8888', '/users/2');
+
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        print(response.body);
+        final user = jsonDecode(response.body);
+        return user;
+      } else {
+        print("Error");
+        throw Exception("Fallo la conexion");
+      }
+    } catch (e) {
+      print(e);
+      throw Exception("Fallo la conexion");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,6 +137,7 @@ class LoginScreen extends StatelessWidget {
 
                         //Navigator
                         onPressed: () {
+                          final Future<User> user = getUser();
                           final route = MaterialPageRoute(builder: (context) => const DashboardScreen());
                           Navigator.pushReplacement(context, route);
                         },
@@ -132,5 +162,11 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
    );
+  }
+  
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }

@@ -16,9 +16,9 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  final urlBase = '/users/2';
+  //final urlBase = '/users/2';
 
-  Future<User> getUser() async {
+  /* Future<User> getUser() async {
     var url = Uri.http('localhost:8888', '/users/2');
 
     try {
@@ -35,13 +35,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
       print(e);
       throw Exception("Fallo la conexion");
     }
-  }
+  } */
 
   @override
-  void initState() {
+  /* void initState() {
     Future<User> user = getUser();
     super.initState();
-  }
+  } */
 
   @override
   Widget build(BuildContext context) {

@@ -16,7 +16,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
 
    Future<User> getUser() async {
-    var url = Uri.http('localhost:8888', '/users/2');
+    var url = Uri.http('https://f3f1-200-8-55-134.ngrok-free.app/notes');
 
     try {
       var response = await http.get(url);

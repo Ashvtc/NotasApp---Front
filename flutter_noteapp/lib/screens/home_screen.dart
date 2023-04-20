@@ -4,10 +4,16 @@ import 'package:flutter_noteapp/themes/app_theme.dart';
 
 import 'new_account_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.bgGray,
